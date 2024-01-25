@@ -1,20 +1,23 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 import { Alert } from "@metrostar/comet-uswds";
 import "./styles.scss";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className="usa-alert usa-alert--info">
-        <div className="usa-alert__body">
-          <h4 className="usa-alert__heading">Informative status</h4>
-          <p className="usa-alert__text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod.
-          </p>
+    <div className="grid-container">
+      <div className="grid-row">
+        <div className="grid-col">
+          <h1>Welcome!</h1>
         </div>
       </div>
-    </main>
+      <div className="grid-row">
+        <div className="grid-col">
+          <Alert id="sign-in-alert" type="info">
+            You are not currently signed in. Please Sign In to access the
+            Dashboard.
+          </Alert>
+        </div>
+      </div>
+    </div>
   );
 }
