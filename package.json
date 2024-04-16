@@ -3,17 +3,23 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "node ./scripts/postinstall.js"
   },
   "dependencies": {
+    "@metrostar/comet-uswds": "^2.0.4",
+    "@uswds/uswds": "^3.8.0",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "20.8.10",
     "@types/react": "18.2.33",
     "@types/react-dom": "18.2.14",
-    "typescript": "^5.2.2"
+    "sass": "^1.70.0",
+    "typescript": "^5.2.2",
+    "url-loader": "^4.1.1"
   }
 }
