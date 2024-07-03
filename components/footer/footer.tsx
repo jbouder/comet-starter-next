@@ -1,12 +1,12 @@
 "use client";
 import { APP_TITLE } from "../../utils/constants";
 import React from "react";
-import facebookIcon from "../../../public/uswds/img/usa-icons/facebook.svg";
-import instagramIcon from "../../../public/uswds/img/usa-icons/instagram.svg";
-import rssIcon from "../../../public/uswds/img/usa-icons/rss_feed.svg";
-import twitterIcon from "../../../public/uswds/img/usa-icons/twitter.svg";
-import youtubeIcon from "../../../public/uswds/img/usa-icons/youtube.svg";
-import logo from "../../../public/img/logo.png";
+import facebookIcon from "../../public/uswds/img/usa-icons/facebook.svg";
+import instagramIcon from "../../public/uswds/img/usa-icons/instagram.svg";
+import rssIcon from "../../public/uswds/img/usa-icons/rss_feed.svg";
+import twitterIcon from "../../public/uswds/img/usa-icons/twitter.svg";
+import youtubeIcon from "../../public/uswds/img/usa-icons/youtube.svg";
+import logo from "../../public/img/logo.png";
 import Image from "next/image";
 
 export const Footer = (): React.ReactElement => {

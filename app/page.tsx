@@ -1,10 +1,12 @@
 "use client";
+
 import { Alert } from "@metrostar/comet-uswds";
 import "./styles.scss";
-import useAuth from "./hooks/use-auth";
+import useAuth from "../hooks/use-auth";
 
-export default function Page() {
+export default function Home() {
   const { isSignedIn } = useAuth();
+
   return (
     <div className="grid-container">
       <div className="grid-row">
