@@ -1,3 +1,6 @@
+import { Footer } from "./components/footer/footer";
+import { Header } from "./components/header/header";
+
 export default function RootLayout({
   children,
 }: {
@@ -6,7 +9,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="usa-section">{children}</main>
+        <Header />
+        <main id="mainSection" className="usa-section">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

@@ -5,15 +5,4 @@ module.exports = {
       "./node_modules/@uswds/uswds/packages",
     ],
   },
-
-  experimental: {
-    turbo: {
-      rules: {
-        "*.svg": {
-          loaders: ["@svgr/webpack"],
-          as: "*.js",
-        },
-      },
-    },
-  },
 };
