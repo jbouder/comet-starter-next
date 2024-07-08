@@ -2,7 +2,7 @@
 
 import { Alert } from "@metrostar/comet-uswds";
 import "./styles.scss";
-import useAuth from "../hooks/use-auth";
+import useAuth from "@hooks/use-auth";
 
 export default function Home() {
   const { isSignedIn } = useAuth();

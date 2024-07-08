@@ -1,10 +1,13 @@
-import { Footer } from "../components/footer/footer";
-import { Header } from "../components/header/header";
+import { Footer } from "@components/footer/footer";
+import { Header } from "@components/header/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Starter App - Next",
   generator: "Next.js",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

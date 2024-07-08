@@ -11,13 +11,10 @@ import {
   TextInput,
 } from "@metrostar/comet-uswds";
 import { FormInput } from "../../types/form";
-import {
-  PASSWORD_RULES,
-  REQUIRED_FORM_FIELDS_RULES,
-} from "../../utils/constants";
+import { PASSWORD_RULES, REQUIRED_FORM_FIELDS_RULES } from "@utils/constants";
 import React, { FormEvent } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import useAuth from "../../hooks/use-auth";
+import useAuth from "@hooks/use-auth";
 import { useRouter } from "next/navigation";
 
 export default function SignIn() {

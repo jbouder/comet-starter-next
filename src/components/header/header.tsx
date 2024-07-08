@@ -1,9 +1,9 @@
 "use client";
 import { Banner, Icon, Search } from "@metrostar/comet-uswds";
-import { APP_TITLE } from "../../utils/constants";
+import { APP_TITLE } from "@utils/constants";
 import navigation from "@uswds/uswds/js/usa-header";
 import React, { SyntheticEvent, useEffect, useState } from "react";
-import useAuth from "../../hooks/use-auth";
+import useAuth from "@hooks/use-auth";
 import Link from "next/link";
 
 export const Header = (): React.ReactElement => {
