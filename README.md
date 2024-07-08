@@ -1,6 +1,6 @@
-# Next.js + Turbopack
+# Comet Starter - NextJS
 
-This example allows you to get started with `next dev --turbo` quicky.
+The goal of this project is to provide a NextJS starter application, which comes pre-configured with the USWDS-based [Comet Component Library](https://github.com/MetroStar/comet) as well as other tools to accelerate development.
 
 ## Running the Project Locally
 
