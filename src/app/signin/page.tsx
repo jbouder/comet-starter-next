@@ -1,5 +1,10 @@
 "use client";
-
+import { FormInput } from "../../types/form";
+import { PASSWORD_RULES, REQUIRED_FORM_FIELDS_RULES } from "@utils/constants";
+import React, { FormEvent } from "react";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import useAuth from "@hooks/use-auth";
+import { useRouter } from "next/navigation";
 import {
   Alert,
   Button,
@@ -9,13 +14,7 @@ import {
   FormGroup,
   Label,
   TextInput,
-} from "@metrostar/comet-uswds";
-import { FormInput } from "../../types/form";
-import { PASSWORD_RULES, REQUIRED_FORM_FIELDS_RULES } from "@utils/constants";
-import React, { FormEvent } from "react";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import useAuth from "@hooks/use-auth";
-import { useRouter } from "next/navigation";
+} from "@components/comet";
 
 export default function SignIn() {
   const router = useRouter();

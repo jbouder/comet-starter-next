@@ -7,7 +7,7 @@
     "postinstall": "node ./scripts/postinstall.js"
   },
   "dependencies": {
-    "@metrostar/comet-uswds": "^2.0.4",
+    "@metrostar/comet-uswds": "2.1.2",
     "@uswds/uswds": "^3.8.0",
     "next": "latest",
     "react": "^18.2.0",

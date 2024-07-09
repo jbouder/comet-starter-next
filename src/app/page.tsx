@@ -1,6 +1,5 @@
 "use client";
-
-import { Alert } from "@metrostar/comet-uswds";
+import { Alert } from "@components/comet";
 import "./styles.scss";
 import useAuth from "@hooks/use-auth";
 

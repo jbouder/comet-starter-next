@@ -1,31 +1,35 @@
 "use client";
-import { Banner, Icon, Search } from "@metrostar/comet-uswds";
 import { APP_TITLE } from "@utils/constants";
-import navigation from "@uswds/uswds/js/usa-header";
+// import navigation from "@uswds/uswds/js/usa-header";
 import React, { SyntheticEvent, useEffect, useState } from "react";
 import useAuth from "@hooks/use-auth";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { Banner, Icon, Search } from "@components/comet";
 
 export const Header = (): React.ReactElement => {
+  const pathname = usePathname();
+  const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
 
   const { isSignedIn, signOut } = useAuth();
 
   const handleMenuClick = (): void => {
+    if (typeof window === "undefined") return;
     window.scrollTo({ top: 0 });
     setShowMenu(!showMenu);
   };
 
   // Ensure navigation JS is loaded
-  useEffect(() => {
-    const bodyElement = document.body;
-    navigation.on(bodyElement);
+  // useEffect(() => {
+  //   const bodyElement = document.body;
+  //   navigation.on(bodyElement);
 
-    // Ensure cleanup after the effect
-    return () => {
-      navigation.off(bodyElement);
-    };
-  });
+  //   // Ensure cleanup after the effect
+  //   return () => {
+  //     navigation.off(bodyElement);
+  //   };
+  // });
 
   useEffect(() => {
     const ref = document.body.style;
@@ -34,15 +38,15 @@ export const Header = (): React.ReactElement => {
 
   useEffect(() => {
     setShowMenu(false);
-  }, [location]);
+  }, [pathname]);
 
   const handleAuth = (event: SyntheticEvent): void => {
     event.preventDefault();
     if (isSignedIn) {
       signOut();
-      // navigate("/");
+      router.push("/");
     } else {
-      // navigate("/signin");
+      router.push("/signin");
     }
   };
 
@@ -81,7 +85,7 @@ export const Header = (): React.ReactElement => {
                   id="home-link"
                   href="/"
                   className={`usa-nav__link ${
-                    location.pathname === "/" ? "usa-current" : ""
+                    pathname === "/" ? "usa-current" : ""
                   }`}
                 >
                   Home
@@ -93,7 +97,7 @@ export const Header = (): React.ReactElement => {
                     id="dashboard-link"
                     href="/dashboard"
                     className={`usa-nav__link ${
-                      location.pathname === "/dashboard" ? "usa-current" : ""
+                      pathname === "/dashboard" ? "usa-current" : ""
                     }`}
                   >
                     Dashboard
@@ -105,7 +109,7 @@ export const Header = (): React.ReactElement => {
                   id="auth-link"
                   href="/signin"
                   className={`usa-nav__link ${
-                    location.pathname === "/signin" ? "usa-current" : ""
+                    pathname === "/signin" ? "usa-current" : ""
                   }`}
                   onClick={handleAuth}
                 >
