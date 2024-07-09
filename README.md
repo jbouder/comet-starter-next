@@ -15,3 +15,17 @@ npm install
 ```sh
 npm run dev
 ```
+
+## Running Unit Tests
+
+To make sure your changes do not break any unit tests, run the following:
+
+```sh
+npm run test
+```
+
+Ensure to review the coverage directory for code coverage details.
+
+```sh
+npm run test:coverage
+```
