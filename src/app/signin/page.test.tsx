@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Page from "./page";
 import * as useAuthMock from "../../hooks/use-auth";
+import { RecoilRoot } from "recoil";
 
 vi.mock("next/navigation", () => {
   const actual = vi.importActual("next/navigation");
@@ -21,12 +22,20 @@ const mockUsername = "username";
 const mockPassword = "password";
 
 test("Page", () => {
-  const { baseElement } = render(<Page />);
+  const { baseElement } = render(
+    <RecoilRoot>
+      <Page />
+    </RecoilRoot>
+  );
   expect(baseElement).toBeTruthy();
 });
 
 test("should simulate a login attempt with blank fields", async () => {
-  const { baseElement } = render(<Page />);
+  const { baseElement } = render(
+    <RecoilRoot>
+      <Page />
+    </RecoilRoot>
+  );
   await userEvent.click(
     screen.getByText("Sign In", { selector: "button[type=submit]" })
   );
@@ -34,7 +43,11 @@ test("should simulate a login attempt with blank fields", async () => {
 });
 
 test("should simulate a login attempt with blank username", async () => {
-  const { baseElement } = render(<Page />);
+  const { baseElement } = render(
+    <RecoilRoot>
+      <Page />
+    </RecoilRoot>
+  );
   await userEvent.type(screen.getByLabelText("Password"), mockPassword);
   await userEvent.click(
     screen.getByText("Sign In", { selector: "button[type=submit]" })
@@ -43,7 +56,11 @@ test("should simulate a login attempt with blank username", async () => {
 });
 
 test("should simulate a login attempt with blank password", async () => {
-  const { baseElement } = render(<Page />);
+  const { baseElement } = render(
+    <RecoilRoot>
+      <Page />
+    </RecoilRoot>
+  );
   await userEvent.type(screen.getByLabelText("Username"), mockUsername);
   await userEvent.click(
     screen.getByText("Sign In", { selector: "button[type=submit]" })
@@ -54,12 +71,17 @@ test("should simulate a login attempt with blank password", async () => {
 test("should simulate a successful login attempt", async () => {
   vi.spyOn(useAuthMock, "default").mockReturnValue({
     isSignedIn: false,
+    currentUserData: null,
     error: null,
     signIn: vi.fn(),
     signOut: vi.fn(),
   });
 
-  const { baseElement } = render(<Page />);
+  const { baseElement } = render(
+    <RecoilRoot>
+      <Page />
+    </RecoilRoot>
+  );
   await userEvent.type(screen.getByLabelText("Username"), mockUsername);
   await userEvent.type(screen.getByLabelText("Password"), mockPassword);
 
@@ -72,12 +94,17 @@ test("should simulate a successful login attempt", async () => {
 test("should simulate a successful login attempt when signed in", async () => {
   vi.spyOn(useAuthMock, "default").mockReturnValue({
     isSignedIn: true,
+    currentUserData: null,
     error: null,
     signIn: vi.fn(),
     signOut: vi.fn(),
   });
 
-  const { baseElement } = render(<Page />);
+  const { baseElement } = render(
+    <RecoilRoot>
+      <Page />
+    </RecoilRoot>
+  );
   await userEvent.type(screen.getByLabelText("Username"), mockUsername);
   await userEvent.type(screen.getByLabelText("Password"), mockPassword);
 
@@ -90,12 +117,17 @@ test("should simulate a successful login attempt when signed in", async () => {
 test("should simulate an unsuccessful login attempt", async () => {
   vi.spyOn(useAuthMock, "default").mockReturnValue({
     isSignedIn: false,
+    currentUserData: null,
     error: "Error",
     signIn: vi.fn(),
     signOut: vi.fn(),
   });
 
-  const { baseElement } = render(<Page />);
+  const { baseElement } = render(
+    <RecoilRoot>
+      <Page />
+    </RecoilRoot>
+  );
   await userEvent.type(screen.getByLabelText("Username"), mockUsername);
   await userEvent.type(screen.getByLabelText("Password"), mockPassword);
 
@@ -106,7 +138,11 @@ test("should simulate an unsuccessful login attempt", async () => {
 });
 
 test("should cancel a login attempt", async () => {
-  const { baseElement } = render(<Page />);
+  const { baseElement } = render(
+    <RecoilRoot>
+      <Page />
+    </RecoilRoot>
+  );
   await userEvent.click(
     screen.getByText("Cancel", { selector: "button[type=button]" })
   );
