@@ -15,7 +15,8 @@
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.52.1"
+    "react-hook-form": "^7.52.1",
+    "recoil": "0.7.7"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

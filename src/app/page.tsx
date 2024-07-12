@@ -2,15 +2,19 @@
 import { Alert } from "@components/comet";
 import "./styles.scss";
 import useAuth from "@hooks/use-auth";
+import { getDisplayName } from "@utils/auth";
 
 export default function Home() {
-  const { isSignedIn } = useAuth();
+  const { isSignedIn, currentUserData } = useAuth();
 
   return (
     <div className="grid-container">
       <div className="grid-row">
         <div className="grid-col">
-          <h1>Welcome Guest</h1>
+          <h1>
+            Welcome{" "}
+            {currentUserData ? getDisplayName(currentUserData) : "Guest"}
+          </h1>
         </div>
       </div>
       {!isSignedIn && (
