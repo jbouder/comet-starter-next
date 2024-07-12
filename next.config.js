@@ -5,6 +5,8 @@ const nextConfig = {
       "./node_modules/@uswds/uswds/packages",
     ],
   },
+  reactStrictMode: true,
+  output: "standalone",
   webpack(config) {
     config.module.rules.push(
       {
