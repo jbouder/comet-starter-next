@@ -3,6 +3,7 @@ import { Header } from "@components/header/header";
 import { Metadata } from "next";
 import QueryClientProvider from "@providers/query-client-provider";
 import RecoilContextProvider from "@providers/recoil-context-provider";
+import "./styles.scss";
 
 export const metadata: Metadata = {
   title: "Starter App - Next",

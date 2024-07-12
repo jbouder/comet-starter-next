@@ -1,6 +1,5 @@
 "use client";
 import { Alert } from "@components/comet";
-import "./styles.scss";
 import useAuth from "@hooks/use-auth";
 import { getDisplayName } from "@utils/auth";
 
