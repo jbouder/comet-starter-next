@@ -6,15 +6,18 @@ const nextConfig = {
     ],
   },
   webpack(config) {
-    config.module.rules.push({
-      test: /\.(svg)$/,
-      use: [
-        {
-          loader: "svg-url-loader",
-          options: { limit: 10000 },
+    config.module.rules.push(
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack", "url-loader"],
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        use: {
+          loader: "url-loader",
         },
-      ],
-    });
+      }
+    );
 
     return config;
   },
