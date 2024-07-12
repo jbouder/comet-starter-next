@@ -1,7 +1,8 @@
 import { Footer } from "@components/footer/footer";
 import { Header } from "@components/header/header";
 import { Metadata } from "next";
-import RecoilContextProvider from "src/providers/recoil-context-provider";
+import QueryClientProvider from "@providers/query-client-provider";
+import RecoilContextProvider from "@providers/recoil-context-provider";
 
 export const metadata: Metadata = {
   title: "Starter App - Next",
@@ -20,11 +21,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <RecoilContextProvider>
-          <Header />
-          <main id="mainSection" className="usa-section">
-            {children}
-          </main>
-          <Footer />
+          <QueryClientProvider>
+            <Header />
+            <main id="mainSection" className="usa-section">
+              {children}
+            </main>
+            <Footer />
+          </QueryClientProvider>
         </RecoilContextProvider>
       </body>
     </html>
