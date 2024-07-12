@@ -6,9 +6,7 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
-  output: "standalone",
   productionBrowserSourceMaps: true,
-  serverComponentsExternalPackages: ["@uswds/uswds"],
   webpack(config) {
     config.module.rules.push(
       {
