@@ -3,6 +3,7 @@ import { APP_TITLE } from "@utils/constants";
 // import navigation from "@uswds/uswds/js/usa-header";
 import React, { SyntheticEvent, useEffect, useState } from "react";
 import useAuth from "@hooks/use-auth";
+import useUswds from "@hooks/use-uswds";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Banner, Icon, Search } from "@components/comet";
@@ -13,6 +14,7 @@ export const Header = (): React.ReactElement => {
   const [showMenu, setShowMenu] = useState(false);
 
   const { isSignedIn, signOut } = useAuth();
+  const { headerOn, headerOff } = useUswds();
 
   const handleMenuClick = (): void => {
     if (typeof window === "undefined") return;
@@ -21,15 +23,15 @@ export const Header = (): React.ReactElement => {
   };
 
   // Ensure navigation JS is loaded
-  // useEffect(() => {
-  //   const bodyElement = document.body;
-  //   navigation.on(bodyElement);
+  useEffect(() => {
+    const bodyElement = document.body;
+    headerOn(bodyElement);
 
-  //   // Ensure cleanup after the effect
-  //   return () => {
-  //     navigation.off(bodyElement);
-  //   };
-  // });
+    // // Ensure cleanup after the effect
+    return () => {
+      headerOff(bodyElement);
+    };
+  });
 
   useEffect(() => {
     const ref = document.body.style;
