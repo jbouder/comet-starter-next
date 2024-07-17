@@ -1,21 +1,20 @@
+"use client";
 import React from 'react';
 import { render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Details from './page';
+import { vi } from 'vitest';
 
 // Mocking the hooks
 import { useParams } from 'next/navigation';
-import useAuth from '../../../hooks/use-auth';
+import useAuth from '../../hooks/use-auth';
 
-// Import the 'vi' namespace
-import { vi } from 'vitest';
-
-// Mocking the modules
+// Mocking the modules with correct paths
 vi.mock('next/navigation', () => ({
   useParams: vi.fn(),
 }));
 
-vi.mock('../../../hooks/use-auth', () => ({
+vi.mock('../../hooks/use-auth', () => ({
   default: vi.fn(),
 }));
 
@@ -43,3 +42,4 @@ describe('Details component', () => {
     expect(baseElement).toBeTruthy();
   });
 });
+

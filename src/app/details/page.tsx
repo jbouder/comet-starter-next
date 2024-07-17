@@ -1,13 +1,13 @@
 "use client";
 import { Spinner } from '@metrostar/comet-extras';
 import { Card } from '@metrostar/comet-uswds';
-import { mockData } from '../../../data/spacecraft';
-import { Spacecraft } from '../../../types/spacecraft';
+import { mockData } from '../../data/spacecraft';
+import { Spacecraft } from '../../types/spacecraft';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useParams } from 'next/navigation';
-import ErrorNotification from '../../../components/error-notification/error-notification';
-import useAuth from '../../../hooks/use-auth';
+import ErrorNotification from '../../components/error-notification/error-notification';
+import useAuth from '../../hooks/use-auth';
 // import axios from '@src/utils/axios';
 
 export const Details = (): React.ReactElement => {
