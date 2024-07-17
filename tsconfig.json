@@ -2,8 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
+    "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -21,15 +26,33 @@
       }
     ],
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/app/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@utils/*": ["src/utils/*"],
-      "@types/*": ["src/types/*"],
-      "@providers/*": ["src/providers/*"],
-      "@public/*": ["public/*"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/app/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@providers/*": [
+        "src/providers/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ]
     },
-    "types": ["vite/client", "vitest/globals"]
+    "types": [
+      "vite/client",
+      "vitest/globals"
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
@@ -37,6 +60,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.js"
-  ],
-  "exclude": ["node_modules"]
+, "__mocks__/comet-uswds.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
