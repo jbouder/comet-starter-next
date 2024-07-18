@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Details from './[id]';
+import Details from './[id]/page';
 import { vi } from 'vitest';
 
 // Mocking the hooks
