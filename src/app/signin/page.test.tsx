@@ -18,6 +18,14 @@ vi.mock("next/navigation", () => {
   };
 });
 
+vi.mock("@metrostar/comet-uswds", async (importOriginal) => {
+  const actual = await importOriginal();
+  return {
+    ...(actual as object),
+    Alert: (props) => <div {...props} className="usa-alert" />,
+  };
+});
+
 const mockUsername = "username";
 const mockPassword = "password";
 

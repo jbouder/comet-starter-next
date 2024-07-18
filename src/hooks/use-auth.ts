@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { currentUser, signedIn } from "../store";
 import { useRecoilState } from "recoil";
