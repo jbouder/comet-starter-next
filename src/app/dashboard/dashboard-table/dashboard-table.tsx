@@ -5,7 +5,7 @@ import { Spacecraft } from '../../../types/spacecraft';
 import { ColumnDef } from '@tanstack/react-table';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { TableData } from '../types';
+import { TableData } from '../../../types/data';
 
 interface DashboardTableProps {
   items: Spacecraft[] | undefined;
@@ -16,7 +16,7 @@ export const DashboardTable = ({
 }: DashboardTableProps): React.ReactElement => {
   const [data, setData] = useState<TableData[]>();
 
-  // Ensure window-related operations run only on the client side
+  
   React.useEffect(() => {
     if (typeof window !== 'undefined' && items) {
       console.log('ITEMS: ', items)
@@ -24,8 +24,7 @@ export const DashboardTable = ({
       items.forEach((item: Spacecraft) => {
         newData.push({
           name: (
-            // <Link id={`details-link-${item.id}`} href={`/details/${item.id}`}>
-            <Link id={`details-link-${item.id}`} href={`../../details/${item.id}`}>
+             <Link id={`details-link-${item.id}`} href={`/details/${item.id}`}>
               {item.name}
             </Link>
           ),
@@ -35,13 +34,6 @@ export const DashboardTable = ({
         });
       });
       setData(newData);
-    }
-  }, [items]);
-
-  // Log details folder to console
-  React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      console.log('Details folder:', items);
     }
   }, [items]);
 

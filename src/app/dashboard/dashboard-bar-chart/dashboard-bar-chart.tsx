@@ -3,7 +3,7 @@
 import { BarGraph } from '@metrostar/comet-data-viz';
 import { Spacecraft } from '../../../types/spacecraft';
 import React, { useEffect, useState } from 'react';
-import { ChartData } from '../types';
+import { ChartData } from '../../../types/data';
 
 interface DashboardBarChartProps {
   items: Spacecraft[] | undefined;
