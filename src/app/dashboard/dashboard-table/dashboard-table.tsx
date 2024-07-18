@@ -1,6 +1,6 @@
 "use client";
 
-import { DataTable } from '@metrostar/comet-extras';
+import DataTable from '../../../components/comet/data-table.tsx'
 import { Spacecraft } from '../../../types/spacecraft';
 import { ColumnDef } from '@tanstack/react-table';
 import React, { useEffect, useState } from 'react';

@@ -1,7 +1,9 @@
 "use client";
 
-import { Spinner } from '@metrostar/comet-extras';
-import { Card, CardBody } from '@metrostar/comet-uswds';
+
+import Spinner from '../../components/comet/spinner';
+import Card from '../../components/comet/card';
+import CardBody from '../../components/comet/card-body';
 import { mockData } from '../../data/spacecraft';
 import { Spacecraft } from '../../types/spacecraft';
 import { useQuery } from '@tanstack/react-query';
