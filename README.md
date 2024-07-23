@@ -29,3 +29,11 @@ Ensure to review the coverage directory for code coverage details.
 ```sh
 npm run test:coverage
 ```
+
+## Running End to End (E2E) Tests
+
+Note: running E2E tests requires the app to be running as well, run the following:
+
+```sh
+npm run e2e
+```
