@@ -16,6 +16,8 @@ import {
   TextInput,
 } from "@components/comet";
 
+import { signIn as nextAuthSignIn } from 'next-auth/react'
+
 export default function SignIn() {
   const router = useRouter();
   const { signIn, error } = useAuth();
@@ -99,6 +101,13 @@ export default function SignIn() {
               >
                 Cancel
               </Button>
+              <Button 
+              id = "keycloak"
+              type="button"
+              variant="default"
+              onClick={() => nextAuthSignIn('keycloak')}>
+                SSO Keycloak
+                </Button>
               {/* {hasSsoConfig() && (
                 <Button
                   id="sign-in-sso"

@@ -10,7 +10,7 @@ import useAuth from "../../../hooks/use-auth";
 import axios from "@utils/axios";
 
 const Details = (): React.ReactElement => {
-  const { id } = useParams();
+  const { id } = useParams() as Record<string, string>;
   const { isSignedIn } = useAuth();
   const { isLoading, error, data } = useQuery<Spacecraft, { message: string }>({
     queryKey: ["details", id],
