@@ -27,7 +27,13 @@ The goal of this project is to provide a NextJS starter application, which comes
 npm install
 ```
 
-2. To start the app, run the following:
+2. To run locally with SSO, add a file called `.env.local` to the `comet-starter-next` directory. Copy and paste the template below and replace the placeholder values with your own (optional):
+
+```
+KEYCLOAK_CLIENT_ID=[SOME_KEYCLOAK_CLIENT_ID] # Ex: dev-client
+KEYCLOAK_CLIENT_SECRET=[SOME_KEYCLOAK_CLIENT_SECRET] # Ex: 123456789abcdefg
+KEYCLOAK_ISSUER=[SOME_KEYCLOAK_ISSUER] # Ex: http://localhost:8088
+```
 
 ```sh
 npm run dev
