@@ -1,7 +1,7 @@
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
 const ErrorMessages = dynamic(
-  () => import("@metrostar/comet-uswds").then((mod) => mod.ErrorMessages),
-  { ssr: false }
+  () => import('@metrostar/comet-uswds').then((mod) => mod.ErrorMessages),
+  { ssr: false },
 );
 export default ErrorMessages;

@@ -1,7 +1,7 @@
-import { act, renderHook } from "@testing-library/react";
-import useUswds from "./use-uswds";
+import { act, renderHook } from '@testing-library/react';
+import useUswds from './use-uswds';
 
-test("should call signIn successfully", async () => {
+test('should call signIn successfully', async () => {
   const { result } = renderHook(() => useUswds());
 
   await act(async () => {
@@ -10,7 +10,7 @@ test("should call signIn successfully", async () => {
   expect(result.current.headerOn).toBeTruthy();
 });
 
-test("should call signOut successfully", async () => {
+test('should call signOut successfully', async () => {
   const { result } = renderHook(() => useUswds());
 
   await act(async () => {

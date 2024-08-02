@@ -1,23 +1,21 @@
-"use client";
+'use client';
 
-import DataTable from "../../../components/comet/data-table.tsx";
-import { Spacecraft } from "../../../types/spacecraft";
-import { ColumnDef } from "@tanstack/react-table";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { TableData } from "../../../types/data";
+import DataTable from '../../../components/comet/data-table.tsx';
+import { Spacecraft } from '../../../types/spacecraft';
+import { ColumnDef } from '@tanstack/react-table';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { TableData } from '../../../types/data';
 
 interface DashboardTableProps {
   items: Spacecraft[] | undefined;
 }
 
-export const DashboardTable = ({
-  items,
-}: DashboardTableProps): React.ReactElement => {
+export const DashboardTable = ({ items }: DashboardTableProps): React.ReactElement => {
   const [data, setData] = useState<TableData[]>();
 
   React.useEffect(() => {
-    if (typeof window !== "undefined" && items) {
+    if (typeof window !== 'undefined' && items) {
       const newData: TableData[] = [];
       items.forEach((item: Spacecraft) => {
         newData.push({
@@ -38,27 +36,27 @@ export const DashboardTable = ({
   const cols = React.useMemo<ColumnDef<TableData>[]>(
     () => [
       {
-        accessorKey: "name",
-        header: "Name",
+        accessorKey: 'name',
+        header: 'Name',
         cell: (info) => info.getValue(),
       },
       {
-        accessorKey: "affiliation",
-        header: "Affiliation",
+        accessorKey: 'affiliation',
+        header: 'Affiliation',
         cell: (info) => info.getValue(),
       },
       {
-        accessorKey: "dimensions",
-        header: "Dimensions",
+        accessorKey: 'dimensions',
+        header: 'Dimensions',
         cell: (info) => info.getValue(),
       },
       {
-        accessorKey: "appearances",
-        header: "Appearances",
+        accessorKey: 'appearances',
+        header: 'Appearances',
         cell: (info) => info.getValue(),
       },
     ],
-    []
+    [],
   );
 
   return data ? (

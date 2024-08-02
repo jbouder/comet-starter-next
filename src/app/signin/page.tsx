@@ -1,10 +1,10 @@
-"use client";
-import { FormInput } from "../../types/form";
-import { PASSWORD_RULES, REQUIRED_FORM_FIELDS_RULES } from "@utils/constants";
-import React, { FormEvent } from "react";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import useAuth from "@hooks/use-auth";
-import { useRouter } from "next/navigation";
+'use client';
+import { FormInput } from '../../types/form';
+import { PASSWORD_RULES, REQUIRED_FORM_FIELDS_RULES } from '@utils/constants';
+import React, { FormEvent } from 'react';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import useAuth from '@hooks/use-auth';
+import { useRouter } from 'next/navigation';
 import {
   Alert,
   Button,
@@ -14,9 +14,9 @@ import {
   FormGroup,
   Label,
   TextInput,
-} from "@components/comet";
+} from '@components/comet';
 
-import { signIn as nextAuthSignIn } from 'next-auth/react'
+import { signIn as nextAuthSignIn } from 'next-auth/react';
 
 export default function SignIn() {
   const router = useRouter();
@@ -27,19 +27,19 @@ export default function SignIn() {
     formState: { errors },
   } = useForm<FormInput>({
     defaultValues: {
-      username: "",
-      password: "",
+      username: '',
+      password: '',
     },
   });
 
   const onSubmit: SubmitHandler<FormInput> = () => {
     signIn();
-    router.push("/dashboard");
+    router.push('/dashboard');
   };
 
   const handleCancel = (event: FormEvent): void => {
     event.preventDefault();
-    router.push("/");
+    router.push('/');
   };
 
   return (
@@ -64,9 +64,7 @@ export default function SignIn() {
                   <TextInput {...field} id="username" autoFocus />
                 )}
               />
-              {errors.username?.message && (
-                <ErrorMessages errors={[errors.username.message]} />
-              )}
+              {errors.username?.message && <ErrorMessages errors={[errors.username.message]} />}
             </FormGroup>
             <FormGroup>
               <Label htmlFor="password">Password</Label>
@@ -79,35 +77,27 @@ export default function SignIn() {
                   <TextInput {...field} id="password" type="password" />
                 )}
               />
-              {errors.password?.message && (
-                <ErrorMessages errors={[errors.password.message]} />
-              )}
+              {errors.password?.message && <ErrorMessages errors={[errors.password.message]} />}
             </FormGroup>
             <ButtonGroup>
               <Button
                 id="submit"
                 type="submit"
-                disabled={
-                  !!errors.username?.message || !!errors.password?.message
-                }
+                disabled={!!errors.username?.message || !!errors.password?.message}
               >
                 Sign In
               </Button>
-              <Button
-                id="cancel"
-                type="button"
-                variant="secondary"
-                onClick={handleCancel}
-              >
+              <Button id="cancel" type="button" variant="secondary" onClick={handleCancel}>
                 Cancel
               </Button>
-              <Button 
-              id = "keycloak"
-              type="button"
-              variant="default"
-              onClick={() => nextAuthSignIn('keycloak')}>
+              <Button
+                id="keycloak"
+                type="button"
+                variant="default"
+                onClick={() => nextAuthSignIn('keycloak')}
+              >
                 SSO Keycloak
-                </Button>
+              </Button>
               {/* {hasSsoConfig() && (
                 <Button
                   id="sign-in-sso"

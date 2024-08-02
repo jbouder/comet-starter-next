@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { PieChart } from '@metrostar/comet-data-viz';
 import { Spacecraft } from '../../../types/spacecraft';
@@ -9,9 +9,7 @@ interface DashboardPieChartProps {
   items: Spacecraft[] | undefined;
 }
 
-export const DashboardPieChart = ({
-  items,
-}: DashboardPieChartProps): React.ReactElement => {
+export const DashboardPieChart = ({ items }: DashboardPieChartProps): React.ReactElement => {
   const [data, setData] = useState<ChartData[]>();
   useEffect(() => {
     if (items) {
@@ -22,9 +20,7 @@ export const DashboardPieChart = ({
       });
 
       set.forEach((name: string) => {
-        const total = items.filter(
-          (item: Spacecraft) => item.affiliation === name,
-        ).length;
+        const total = items.filter((item: Spacecraft) => item.affiliation === name).length;
         newData.push({ x: name.replace('Affiliation ', ''), y: total });
       });
       setData(newData);
