@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import Spinner from "../../components/comet/spinner";
-import Card from "../../components/comet/card";
-import CardBody from "../../components/comet/card-body";
-import { Spacecraft } from "../../types/spacecraft";
-import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
-import ErrorNotification from "../../components/error-notification/error-notification";
-import useAuth from "../../hooks/use-auth";
-import { DashboardBarChart } from "./dashboard-bar-chart/dashboard-bar-chart";
-import { DashboardPieChart } from "./dashboard-pie-chart/dashboard-pie-chart";
-import { DashboardTable } from "./dashboard-table/dashboard-table";
-import axios from "@utils/axios";
+import Spinner from '../../components/comet/spinner';
+import Card from '../../components/comet/card';
+import CardBody from '../../components/comet/card-body';
+import { Spacecraft } from '../../types/spacecraft';
+import { useQuery } from '@tanstack/react-query';
+import React, { useEffect, useState } from 'react';
+import ErrorNotification from '../../components/error-notification/error-notification';
+import useAuth from '../../hooks/use-auth';
+import { DashboardBarChart } from './dashboard-bar-chart/dashboard-bar-chart';
+import { DashboardPieChart } from './dashboard-pie-chart/dashboard-pie-chart';
+import { DashboardTable } from './dashboard-table/dashboard-table';
+import axios from '@utils/axios';
 
 export default function Dashboard(): React.ReactElement {
   const { isSignedIn } = useAuth();
@@ -26,10 +26,10 @@ export default function Dashboard(): React.ReactElement {
     error,
     data: items,
   } = useQuery<Spacecraft[], { message: string }>({
-    queryKey: ["dashboard"],
+    queryKey: ['dashboard'],
     queryFn: () =>
       axios
-        .get("/spacecraft")
+        .get('/spacecraft')
         .then((response) => {
           return response.data;
         })

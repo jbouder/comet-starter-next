@@ -1,5 +1,5 @@
-import Alert from "@components/comet/alert";
-import React from "react";
+import Alert from '@components/comet/alert';
+import React from 'react';
 
 interface ErrorNotificationProps {
   error: string;

@@ -1,13 +1,13 @@
-"use client";
-import { APP_TITLE } from "@utils/constants";
-import React from "react";
-import facebookIcon from "@public/uswds/img/usa-icons/facebook.svg";
-import instagramIcon from "@public/uswds/img/usa-icons/instagram.svg";
-import rssIcon from "@public/uswds/img/usa-icons/rss_feed.svg";
-import twitterIcon from "@public/uswds/img/usa-icons/twitter.svg";
-import youtubeIcon from "@public/uswds/img/usa-icons/youtube.svg";
-import logo from "@public/img/logo.png";
-import Image from "next/image";
+'use client';
+import { APP_TITLE } from '@utils/constants';
+import React from 'react';
+import facebookIcon from '@public/uswds/img/usa-icons/facebook.svg';
+import instagramIcon from '@public/uswds/img/usa-icons/instagram.svg';
+import rssIcon from '@public/uswds/img/usa-icons/rss_feed.svg';
+import twitterIcon from '@public/uswds/img/usa-icons/twitter.svg';
+import youtubeIcon from '@public/uswds/img/usa-icons/youtube.svg';
+import logo from '@public/img/logo.png';
+import Image from 'next/image';
 
 export const Footer = (): React.ReactElement => {
   const scrollToTop = (event: React.MouseEvent<HTMLAnchorElement>): void => {
@@ -108,7 +108,7 @@ export const Footer = (): React.ReactElement => {
                   src={logo}
                   alt="US Flag"
                   className="usa-footer__logo-img"
-                  style={{ height: "80px" }}
+                  style={{ height: '80px' }}
                 />
               </div>
               <div className="mobile-lg:grid-col-auto">
@@ -119,66 +119,42 @@ export const Footer = (): React.ReactElement => {
               <div className="usa-footer__social-links grid-row grid-gap-1">
                 <div className="grid-col-auto">
                   <a className="usa-social-link" href="/#">
-                    <Image
-                      className="usa-social-link__icon"
-                      src={facebookIcon}
-                      alt="Facebook"
-                    />
+                    <Image className="usa-social-link__icon" src={facebookIcon} alt="Facebook" />
                   </a>
                 </div>
 
                 <div className="grid-col-auto">
                   <a className="usa-social-link" href="/#">
-                    <Image
-                      className="usa-social-link__icon"
-                      src={twitterIcon}
-                      alt="Twitter"
-                    />
+                    <Image className="usa-social-link__icon" src={twitterIcon} alt="Twitter" />
                   </a>
                 </div>
 
                 <div className="grid-col-auto">
                   <a className="usa-social-link" href="/#">
-                    <Image
-                      className="usa-social-link__icon"
-                      src={youtubeIcon}
-                      alt="YouTube"
-                    />
+                    <Image className="usa-social-link__icon" src={youtubeIcon} alt="YouTube" />
                   </a>
                 </div>
 
                 <div className="grid-col-auto">
                   <a className="usa-social-link" href="/#">
-                    <Image
-                      className="usa-social-link__icon"
-                      src={instagramIcon}
-                      alt="Instagram"
-                    />
+                    <Image className="usa-social-link__icon" src={instagramIcon} alt="Instagram" />
                   </a>
                 </div>
 
                 <div className="grid-col-auto">
                   <a className="usa-social-link" href="/#">
-                    <Image
-                      className="usa-social-link__icon"
-                      src={rssIcon}
-                      alt="RSS"
-                    />
+                    <Image className="usa-social-link__icon" src={rssIcon} alt="RSS" />
                   </a>
                 </div>
               </div>
-              <h2 className="usa-footer__contact-heading">
-                &lt;Agency Contact Center&gt;
-              </h2>
+              <h2 className="usa-footer__contact-heading">&lt;Agency Contact Center&gt;</h2>
               <address className="usa-footer__address">
                 <div className="usa-footer__contact-info grid-row grid-gap">
                   <div className="grid-col-auto">
                     <a href="tel:1-800-555-5555"> &lt;(800) 555-GOVT&gt; </a>
                   </div>
                   <div className="grid-col-auto">
-                    <a href="mailto:&lt;info@agency.gov&gt;">
-                      &lt;info@agency.gov&gt;
-                    </a>
+                    <a href="mailto:&lt;info@agency.gov&gt;">&lt;info@agency.gov&gt;</a>
                   </div>
                 </div>
               </address>

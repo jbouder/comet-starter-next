@@ -1,12 +1,12 @@
-"use client";
-import { APP_TITLE } from "@utils/constants";
+'use client';
+import { APP_TITLE } from '@utils/constants';
 // import navigation from "@uswds/uswds/js/usa-header";
-import React, { SyntheticEvent, useEffect, useState } from "react";
-import useAuth from "@hooks/use-auth";
-import useUswds from "@hooks/use-uswds";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { Banner, Icon, Search } from "@components/comet";
+import React, { SyntheticEvent, useEffect, useState } from 'react';
+import useAuth from '@hooks/use-auth';
+import useUswds from '@hooks/use-uswds';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { Banner, Icon, Search } from '@components/comet';
 
 export const Header = (): React.ReactElement => {
   const pathname = usePathname();
@@ -17,7 +17,7 @@ export const Header = (): React.ReactElement => {
   const { headerOn, headerOff } = useUswds();
 
   const handleMenuClick = (): void => {
-    if (typeof window === "undefined") return;
+    if (typeof window === 'undefined') return;
     window.scrollTo({ top: 0 });
     setShowMenu(!showMenu);
   };
@@ -35,7 +35,7 @@ export const Header = (): React.ReactElement => {
 
   useEffect(() => {
     const ref = document.body.style;
-    showMenu ? (ref.overflow = "hidden") : (ref.overflow = "visible");
+    showMenu ? (ref.overflow = 'hidden') : (ref.overflow = 'visible');
   }, [showMenu]);
 
   useEffect(() => {
@@ -46,9 +46,9 @@ export const Header = (): React.ReactElement => {
     event.preventDefault();
     if (isSignedIn) {
       signOut();
-      router.push("/");
+      router.push('/');
     } else {
-      router.push("/signin");
+      router.push('/signin');
     }
   };
 
@@ -69,11 +69,7 @@ export const Header = (): React.ReactElement => {
                 </Link>
               </em>
             </div>
-            <button
-              type="button"
-              className="usa-menu-btn"
-              onClick={handleMenuClick}
-            >
+            <button type="button" className="usa-menu-btn" onClick={handleMenuClick}>
               Menu
             </button>
           </div>
@@ -86,9 +82,7 @@ export const Header = (): React.ReactElement => {
                 <Link
                   id="home-link"
                   href="/"
-                  className={`usa-nav__link ${
-                    pathname === "/" ? "usa-current" : ""
-                  }`}
+                  className={`usa-nav__link ${pathname === '/' ? 'usa-current' : ''}`}
                 >
                   Home
                 </Link>
@@ -98,9 +92,7 @@ export const Header = (): React.ReactElement => {
                   <Link
                     id="dashboard-link"
                     href="/dashboard"
-                    className={`usa-nav__link ${
-                      pathname === "/dashboard" ? "usa-current" : ""
-                    }`}
+                    className={`usa-nav__link ${pathname === '/dashboard' ? 'usa-current' : ''}`}
                   >
                     Dashboard
                   </Link>
@@ -110,12 +102,10 @@ export const Header = (): React.ReactElement => {
                 <Link
                   id="auth-link"
                   href="/signin"
-                  className={`usa-nav__link ${
-                    pathname === "/signin" ? "usa-current" : ""
-                  }`}
+                  className={`usa-nav__link ${pathname === '/signin' ? 'usa-current' : ''}`}
                   onClick={handleAuth}
                 >
-                  {isSignedIn ? "Sign Out" : "Sign In"}
+                  {isSignedIn ? 'Sign Out' : 'Sign In'}
                 </Link>
               </li>
             </ul>

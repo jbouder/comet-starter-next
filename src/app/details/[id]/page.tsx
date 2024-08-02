@@ -1,19 +1,19 @@
-"use client";
-import { Spinner } from "@metrostar/comet-extras";
-import { Card } from "@metrostar/comet-uswds";
-import { Spacecraft } from "../../../types/spacecraft";
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { useParams } from "next/navigation";
-import ErrorNotification from "../../../components/error-notification/error-notification";
-import useAuth from "../../../hooks/use-auth";
-import axios from "@utils/axios";
+'use client';
+import { Spinner } from '@metrostar/comet-extras';
+import { Card } from '@metrostar/comet-uswds';
+import { Spacecraft } from '../../../types/spacecraft';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
+import { useParams } from 'next/navigation';
+import ErrorNotification from '../../../components/error-notification/error-notification';
+import useAuth from '../../../hooks/use-auth';
+import axios from '@utils/axios';
 
 const Details = (): React.ReactElement => {
   const { id } = useParams() as Record<string, string>;
   const { isSignedIn } = useAuth();
   const { isLoading, error, data } = useQuery<Spacecraft, { message: string }>({
-    queryKey: ["details", id],
+    queryKey: ['details', id],
     queryFn: () =>
       axios.get(`/spacecraft/${id}`).then((response) => {
         return response.data;
@@ -39,12 +39,7 @@ const Details = (): React.ReactElement => {
       <div className="grid-row">
         <div className="grid-col">
           {isLoading ? (
-            <Spinner
-              id="spinner"
-              type="small"
-              loadingText="Loading..."
-              className="padding-top-2"
-            />
+            <Spinner id="spinner" type="small" loadingText="Loading..." className="padding-top-2" />
           ) : data ? (
             <Card id="details-card">
               <ul>

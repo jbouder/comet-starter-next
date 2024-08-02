@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { BarGraph } from '@metrostar/comet-data-viz';
 import { Spacecraft } from '../../../types/spacecraft';
@@ -9,9 +9,7 @@ interface DashboardBarChartProps {
   items: Spacecraft[] | undefined;
 }
 
-export const DashboardBarChart = ({
-  items,
-}: DashboardBarChartProps): React.ReactElement => {
+export const DashboardBarChart = ({ items }: DashboardBarChartProps): React.ReactElement => {
   const [data, setData] = useState<ChartData[]>();
   useEffect(() => {
     if (items) {
