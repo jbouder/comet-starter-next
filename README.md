@@ -8,6 +8,8 @@ The goal of this project is to provide a NextJS starter application, which comes
 - Data Visualization: [Victory Charts](https://formidable.com/open-source/victory/)
 - State Management: [Recoil](https://recoiljs.org/)
 - Form Validation: [React Hook Form](https://react-hook-form.com/)
+- Code Analysis: [ES Lint](https://eslint.org/)
+- Code Formatting: [Prettier](https://prettier.io/)
 - Unit Testing: [Vitest](https://vitest.dev/) with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - End-to-End (E2E) Testing: [Playwright](https://playwright.dev/)
 - API support: Next.js APIs with [Axios](https://axios-http.com/) and [React Query](https://tanstack.com/query/v3/)
