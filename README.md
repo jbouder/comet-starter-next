@@ -35,6 +35,8 @@ KEYCLOAK_CLIENT_SECRET=[SOME_KEYCLOAK_CLIENT_SECRET] # Ex: 123456789abcdefg
 KEYCLOAK_ISSUER=[SOME_KEYCLOAK_ISSUER] # Ex: http://localhost:8088
 ```
 
+3. To start the app, run the following:
+
 ```sh
 npm run dev
 ```
